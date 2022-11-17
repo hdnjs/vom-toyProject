@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#accordion {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  overflow: hidden;
+  margin: auto;
+  padding-top: 1rem;
+}
+
+.acc-wrap {
+  border: 1px solid blue;
+}
+
+.acc-wrap:not(:last-child) {
+  border-bottom: 0;
+  /* 겹치는 부분 테두리 제거 */
+}
+
+.acc-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.acc-header.active + .acc-content {
+  _display: block;
+  padding: 0.5rem;
+  height: auto;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.acc-header.active .icon {
+  transform: rotate(135deg);
+}
+
+.acc-content {
+  padding: 0 0.5rem;
+  _display: none;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+body {
+  height: 3000px;
+}
